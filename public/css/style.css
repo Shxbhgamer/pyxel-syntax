@@ -708,3 +708,9 @@ display:none;
 }
 
 }
+
+
+.mobile-menu ul li a:hover{
+color:#00eaff;
+text-shadow:0 0 10px #00eaff;
+}
