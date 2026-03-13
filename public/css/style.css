@@ -609,3 +609,34 @@ border-radius:8px;
 width:100%;
 aspect-ratio:9/16;
 }
+.view-work-btn{
+padding:14px 30px;
+font-size:18px;
+font-weight:bold;
+color:#00eaff;
+background:transparent;
+border:2px solid #00eaff;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 10px #00eaff;
+}
+
+/* hover effect */
+.view-work-btn:hover{
+background:#00eaff;
+color:black;
+transform:scale(1.08);
+box-shadow:0 0 20px #00eaff,
+           0 0 40px #00eaff;
+}
+
+@media (max-width:768px){
+
+.view-work-btn{
+width:80%;
+font-size:16px;
+padding:12px;
+}
+
+}
