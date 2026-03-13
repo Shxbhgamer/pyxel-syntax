@@ -283,9 +283,6 @@ color:transparent;
 padding:15px 20px;
 }
 
-.nav-links{
-display:none;
-}
 
 .hero h1{
 font-size:32px;
@@ -307,7 +304,7 @@ color:white;
 @media (max-width:768px){
 
 .nav-links{
-display:none;
+display:"flex"
 flex-direction:column;
 position:absolute;
 top:70px;
