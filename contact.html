@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Contact | Pyxel Syntax</title>
+
+<link rel="stylesheet" href="public/css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">PYXEL SYNTAX</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="page">
+
+<h1>Contact Me</h1>
+<form class="contact-form" id="contactForm">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send</button>
+
+</form>
+</section>
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+
+e.preventDefault()
+
+let name = document.getElementById("name").value
+let email = document.getElementById("email").value
+let message = document.getElementById("message").value
+
+let phone = "919431331072"
+
+let text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`
+
+let url = `https://wa.me/${phone}?text=${text}`
+
+window.open(url, "_blank")
+
+})
+
+</script>
+</body>
+</html>

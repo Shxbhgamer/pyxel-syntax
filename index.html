@@ -1,164 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <title>Pyxel Syntax</title>
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/animations.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="public/css/style.css">
 
+<meta name="theme-color" content="#000000">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+
 <div id="particles-js"></div>
 
-<div id="loader">Loading Pyxel Syntax...</div>
-
-<header>
-
-<h2>PYXEL SYNTAX</h2>
-
-<nav>
-
-<a href="html/index.html">Home</a>
-<a href="html/about.html">About</a>
-<a href="html/portfolio.html">Portfolio</a>
-<a href="html/services.html">Services</a>
-<a href="html/contact.html">Contact</a>
-
-</nav>
-
-<button id="darkToggle">🌙</button>
-
-</header>
-
-<section class="hero">
-
-<h1>Pyxel Syntax</h1>
-<p id="typing"></p>
-
-<div class="buttons">
-
-<a href="https://youtube.com/@pyxelsyntax?si=0xCY7Mi91IfEDqE8">YouTube</a>
-<a href="https://instagram.com/Pyxel_Syntax">Instagram</a>
-<a href="mailto:PyxelSyntax@gmail.com">Email</a>
-
-</div>
-
-</section>
-
-<section class="stats">
-
-<div>
-<h2 id="projects">0</h2>
-<p>Projects</p>
-</div>
-
-<div>
-<h2 id="clients">0</h2>
-<p>Clients</p>
-</div>
-
-<div>
-<h2 id="views">0</h2>
-<p>Views</p>
-</div>
-
-</section>
-
-<section class="reviews">
-
-<h2>Client Reviews</h2>
-
-<div id="reviewContainer"></div>
-
-</section>
-
-<footer>
-
-<p>© 2026 Pyxel Syntax</p>
-
-</footer>
-
-<script src="js/main.js"></script>
-<script src="js/particles.js"></script>
-<script src="js/stats.js"></script>
-<script src="js/reviews.js"></script>
-<script src="js/popup.js"></script>
-<script src="js/scroll.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-<script>
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 80 },
-    size: { value: 3 },
-    color: { value: "#00ffff" },
-    line_linked: {
-      enable: true,
-      color: "#00ffff"
-    },
-    move: {
-      speed: 2
-    }
-  }
-});
-</script>
 <nav class="navbar">
 
-<div class="logo">Pyxel Syntax</div>
+<div class="logo">PYXEL SYNTAX</div>
 
 <ul class="nav-links">
 
 <li><a href="index.html">Home</a></li>
-<li><a href="html/about.html">About</a></li>
-<li><a href="html/services.html">Services</a></li>
-<li><a href="html/portfolio.html">Portfolio</a></li>
-<li><a href="html/contact.html">Contact</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
 
 </ul>
 
 </nav>
+<nav class="navbar">
+
+<div class="logo">Pyxel Syntax</div>
+
+<div class="menu-toggle">
+☰
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
 <section class="hero">
 
-<h1>Welcome to Pyxel Syntax</h1>
+<h1 class="gradient">Welcome to Pyxel Syntax</h1>
 
 <p>Web Developer • Video Editor • Creator</p>
 
-<a href="html/portfolio.html" class="hero-btn">View My Work</a>
+<button class="btn">View My Work</button>
 
 </section>
-<section class="terminal">
 
-<h2>Developer Console</h2>
 
-<div class="terminal-box">
+<section class="stats">
 
-<p id="terminal-text"></p>
+<div class="stat">
+<h2 id="projects">40</h2>
+<p>Projects</p>
+</div>
 
+<div class="stat">
+<h2 id="clients">25</h2>
+<p>Clients</p>
+</div>
+
+<div class="stat">
+<h2 id="views">20,000</h2>
+<p>Views</p>
 </div>
 
 </section>
-<div class="chatbot">
+<section class="about-section">
+<h2>About Me</h2>
+<p>
+I am a web developer and video editor. I create modern websites,
+animations, and interactive UI experiences.
+</p>
+</section>
 
-<input id="userInput" placeholder="Ask me something...">
-
-<button onclick="chat()">Send</button>
-
-<p id="botReply"></p>
-
+<section class="services-section">
+<h2>Services</h2>
+<div class="services">
+<div class="service-card">Website Development</div>
+<div class="service-card">Video Editing</div>
 </div>
+</section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<section class="contact-section">
+<h2>Contact</h2>
+<p>Email: pyxelsyntax@gmail.com</p>
+</section>
 
-<script src="js/terminal.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="js/three-hero.js"></script>
+<script src="public/js/counter.js"></script>
+<script src="public/js/particles-config.js"></script>
+<script src="public/js/three-bg.js"></script>
+<script src="public/js/counter.js"></script>
+<script src="public/js/neon-geometry.js"></script>
+<script src="public/js/navbar-scroll.js"></script>
+<script src="public/js/script.js"></script>
+
+<!-- Contact Me -->
+
+
 </body>
 </html>
