@@ -707,16 +707,16 @@ color:#00eaff;
 text-shadow:0 0 10px #00eaff;
 }
 
-#neon-bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-background:black;
+#neon-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* stays behind everything */
+  background: black;
+  pointer-events: none; /* allows clicks on buttons/links */
 }
-
 
 body{
 margin:0;
