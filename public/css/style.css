@@ -327,19 +327,14 @@ display:block;
 
 }
 
+/* Desktop Navbar */
+
 .nav-links{
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-
-background:black;
-
-flex-direction:column;
-text-align:center;
-
-display:none;
+display:flex;
+gap:30px;
+list-style:none;
 }
+
 
 .nav-links.active{
 display:flex;
@@ -729,4 +724,8 @@ background:black;
 body{
 margin:0;
 overflow-x:hidden;
+}
+.nav-links a:hover{
+color:#00eaff;
+text-shadow:0 0 10px #00eaff;
 }
