@@ -9,10 +9,13 @@ input.value=""
 }
 
 // IMAGE POPUP
-
 const images = document.querySelectorAll(".preview")
+
+if(images.length > 0){
+
 const imagePopup = document.getElementById("imagePopup")
 const popupImage = document.getElementById("popupImage")
+const closeImage = document.getElementById("closeImage")
 
 images.forEach(img => {
 
@@ -25,19 +28,28 @@ popupImage.src = img.src
 
 })
 
-document.getElementById("closeImage").onclick = () => {
+if(closeImage){
+
+closeImage.onclick = () => {
 
 imagePopup.style.display = "none"
+
+}
+
+}
 
 }
 
 
 
 // VIDEO POPUP
-
 const videos = document.querySelectorAll(".preview-video")
+
+if(videos.length > 0){
+
 const videoPopup = document.getElementById("videoPopup")
 const popupVideo = document.getElementById("popupVideo")
+const closeVideo = document.getElementById("closeVideo")
 
 videos.forEach(video => {
 
@@ -51,32 +63,30 @@ popupVideo.play()
 
 })
 
-document.getElementById("closeVideo").onclick = () => {
+if(closeVideo){
+
+closeVideo.onclick = () => {
 
 videoPopup.style.display = "none"
 popupVideo.pause()
 
 }
 
-function filterSelection(category) {
+}
+
+}
+
+function filterSelection(category){
 
 const cards = document.querySelectorAll(".card")
 
 cards.forEach(card => {
 
-if (category === "all") {
+if(category === "all" || card.classList.contains(category)){
 
 card.style.display = "block"
 
-}
-
-else if (card.classList.contains(category)) {
-
-card.style.display = "block"
-
-}
-
-else {
+}else{
 
 card.style.display = "none"
 
@@ -88,11 +98,15 @@ card.style.display = "none"
 
 filterSelection("all")
 
-const toggle = document.getElementById("menuToggle")
-const nav = document.getElementById("navLinks")
+const toggle = document.getElementById("openMenu")
+const nav = document.getElementById("mobileMenu")
+
+if(toggle){
 
 toggle.addEventListener("click", () => {
 
 nav.classList.toggle("active")
 
 })
+
+}
