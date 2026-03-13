@@ -145,7 +145,21 @@ animations, and interactive UI experiences.
 <script src="public/js/script.js"></script>
 
 <!-- Contact Me -->
+<script>
 
+const openMenu = document.getElementById("openMenu")
+const closeMenu = document.getElementById("closeMenu")
+const mobileMenu = document.getElementById("mobileMenu")
+
+openMenu.addEventListener("click", () => {
+mobileMenu.classList.add("active")
+})
+
+closeMenu.addEventListener("click", () => {
+mobileMenu.classList.remove("active")
+})
+
+</script>
 
 </body>
 </html>
