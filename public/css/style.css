@@ -762,3 +762,60 @@ button:active {
   transform: scale(0.95);
   box-shadow: 0 0 8px rgba(123, 47, 247, 0.5);
 }
+
+
+/* MOBILE RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-top: 40px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Center everything nicely */
+  section {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  /* Services fix */
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Service items */
+  .services div {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+
+  /* Contact text */
+  .contact {
+    font-size: 16px;
+    word-break: break-word;
+  }
+
+  /* Button fix */
+  button {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    font-size: 16px;
+  }
+}
