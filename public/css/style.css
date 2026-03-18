@@ -819,3 +819,85 @@ button:active {
     font-size: 16px;
   }
 }
+
+/* Default (Desktop) */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 768px) {
+
+  /* Hide desktop nav */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .menu-btn {
+    display: block;
+    font-size: 26px;
+    color: #00eaff;
+    cursor: pointer;
+  }
+
+  /* Mobile menu styling */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden */
+    width: 70%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    transition: 0.4s ease;
+    z-index: 999;
+    padding: 30px;
+  }
+
+  /* When active */
+  .mobile-menu.active {
+    right: 0;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-menu ul li {
+    margin: 20px 0;
+  }
+
+  .mobile-menu ul li a {
+    color: #00eaff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .close-btn {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Push content down */
+body {
+  padding-top: 70px;
+}
