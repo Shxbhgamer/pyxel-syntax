@@ -113,6 +113,17 @@ body{
   box-shadow:0 0 15px #00f7ff;
   transform:scale(1.05);
 }
+
+  .card.web img{
+  height:180px;   /* 👈 adjust this (150–220px as you like) */
+  object-fit:cover;
+}
+  .card.web{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:260px; /* 👈 total card height */
+}
 /* ================= GRID ================= */
 .portfolio-grid{
   display:grid;
@@ -237,12 +248,15 @@ section{
 <div class="portfolio-grid">
 
 <div class="card web">
-<img src="media/image/beauty-parlor.png">
-<h3>Business Website</h3>
 
-<a href="https://shxbhgamer.github.io/Just-for-you/#home" target="_blank" class="visit-btn">
-Visit Website
-</a>
+  <img src="media/image/beauty-parlor.png">
+
+  <h3>Your Project Name</h3>
+
+  <a href="https://shxbhgamer.github.io/Just-for-you/" target="_blank" class="visit-btn">
+    Visit Website 🚀
+  </a>
+
 </div>
 
 <div class="card edit" onclick="openVideo('https://www.youtube.com/embed/5ov7LDxVhc4')">
