@@ -260,13 +260,14 @@ openMenu.onclick = () => mobileMenu.classList.add("active")
 closeMenu.onclick = () => mobileMenu.classList.remove("active")
 
 /* FILTER */
-function filterSelection(cat){
+function filterSelection(category){
   let cards = document.querySelectorAll(".card")
-  cards.forEach(card=>{
-    if(cat==="all" || card.classList.contains(cat)){
-      card.style.display="block"
-    }else{
-      card.style.display="none"
+
+  cards.forEach(card => {
+    if(category === "all" || card.classList.contains(category)){
+      card.style.display = "flex"   // ✅ FIX HERE
+    } else {
+      card.style.display = "none"
     }
   })
 }
