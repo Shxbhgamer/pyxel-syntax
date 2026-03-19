@@ -213,7 +213,10 @@ section{
   right:-100%;   /* 👈 hidden right */
   width:70%;
   height:100%;
-  background:transparent;
+  
+background:rgba(0,0,0,0.3);   /* 👈 light transparent */
+  backdrop-filter:blur(12px);   /* 👈 glass effect */
+  
   padding:40px;
   transition:0.4s;
 }
