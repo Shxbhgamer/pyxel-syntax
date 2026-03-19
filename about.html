@@ -5,12 +5,17 @@
 
 <title>About | Pyxel Syntax</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="public/css/style.css">
 
 </head>
 
 <body>
+
 <canvas id="neon-bg"></canvas>
+
+<!-- NAVBAR -->
 <nav class="navbar">
 
 <div class="logo">PYXEL SYNTAX</div>
@@ -41,31 +46,36 @@
 
 </nav>
 
+<!-- ABOUT SECTION -->
 <section class="page">
 
 <h1>About Me</h1>
 
-<p>
-
-Welcome to Pyxel Syntax.
-
-I am a **Web Developer and Video Editor** creating modern websites,
-3D interfaces, and high-quality video content.
-
+<p class="about-text">
+Welcome to <b>Pyxel Syntax</b> 🚀  
+I am a <span class="highlight">Web Developer</span> and 
+<span class="highlight">Video Editor</span> creating modern websites,
+3D interfaces, and cinematic content.
 </p>
 
+<!-- SKILLS -->
 <div class="skills">
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">NodeJS</div>
-<div class="skill">Video Editing</div>
+<div class="skill" onclick="openPopup('HTML','Structure of every website I build')">HTML</div>
+
+<div class="skill" onclick="openPopup('CSS','Styling, animations, and modern UI design')">CSS</div>
+
+<div class="skill" onclick="openPopup('JavaScript','Interactivity, animations, and logic')">JavaScript</div>
+
+<div class="skill" onclick="openPopup('NodeJS','Backend APIs and server logic')">NodeJS</div>
+
+<div class="skill" onclick="openPopup('Video Editing','Cinematic edits, reels, and content creation')">Video Editing</div>
 
 </div>
 
 </section>
 
+<!-- POPUP -->
 <div class="popup" id="popup">
   <div class="popup-content">
     <h2 id="popupTitle"></h2>
@@ -73,6 +83,34 @@ I am a **Web Developer and Video Editor** creating modern websites,
     <button onclick="closePopup()">Close</button>
   </div>
 </div>
-  
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+const openMenu = document.getElementById("openMenu")
+const closeMenu = document.getElementById("closeMenu")
+const mobileMenu = document.getElementById("mobileMenu")
+
+openMenu.addEventListener("click", () => {
+  mobileMenu.classList.add("active")
+})
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.remove("active")
+})
+</script>
+
+<!-- POPUP SCRIPT -->
+<script>
+function openPopup(title,text){
+  document.getElementById("popupTitle").innerText = title
+  document.getElementById("popupText").innerText = text
+  document.getElementById("popup").style.display = "flex"
+}
+
+function closePopup(){
+  document.getElementById("popup").style.display = "none"
+}
+</script>
+
 </body>
 </html>
