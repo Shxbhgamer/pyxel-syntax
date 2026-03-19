@@ -200,26 +200,22 @@ section{
 
 /* HAMBURGER */
 .menu-btn{
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-  color:white;
-}
+    display:block !important;
+    font-size:28px;
+    color:#00f7ff;
+    cursor:pointer;
+  }
 
-/* MOBILE MENU (RIGHT SIDE ✅) */
-.mobile-menu{
-  position:fixed;
-  top:0;
-  right:-100%;   /* 👈 hidden right */
-  width:70%;
-  height:100%;
-  
-background:rgba(0,0,0,0.3);   /* 👈 light transparent */
-  backdrop-filter:blur(12px);   /* 👈 glass effect */
-  
-  padding:40px;
-  transition:0.4s;
-}
+  .mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100%;
+    background:black;
+    padding:40px;
+    transition:0.4s;
+  }
 
 .mobile-menu.active{
   right:0;  /* 👈 slide from right */
