@@ -47,12 +47,18 @@
 
 <div class="service">
 
-<h3>Web Development</h3>
-
-<p>Modern websites using latest technologies</p>
-
+<div class="service-card" onclick="openPopup('Website Development','I build modern responsive websites')">
+Website Development
 </div>
 
+<div class="service-card" onclick="openPopup('Video Editing','Cinematic edits and reels')">
+Video Editing
+</div>
+
+</div>
+<p onclick="openPopup('About Me','I am a web developer and video editor creating modern UI')">
+I am a web developer and video editor...
+</p>
 <div class="service">
 
 <h3>Video Editing</h3>
@@ -62,8 +68,24 @@
 </div>
 
 </div>
+<script>
+function openPopup(title,text){
+  document.getElementById("popupTitle").innerText=title
+  document.getElementById("popupText").innerText=text
+  document.getElementById("popup").style.display="flex"
+}
 
+function closePopup(){
+  document.getElementById("popup").style.display="none"
+}
+</script>
 </section>
-
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
 </body>
 </html>
