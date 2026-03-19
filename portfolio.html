@@ -24,8 +24,9 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 30px;
+  padding:15px 40px;
   background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px)
 }
 
 
@@ -38,15 +39,32 @@ body{
   text-shadow:0 0 10px rgba(0,247,255,0.4);
 }
 
+.navbar{
+  padding:15px 40px;
+  backdrop-filter:blur(10px);
+}
+
 .nav-links{
-  display:flex;
-  gap:20px;
-  list-style:none;
+  gap:30px;
 }
 
 .nav-links a{
-  text-decoration:none;
-  color:white;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  bottom:-5px;
+  left:0;
+  background:#00f7ff;
+  transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
 }
 
 /* MOBILE NAV */
@@ -114,16 +132,28 @@ body{
   transform:scale(1.05);
 }
 
-  .card.web img{
-  height:180px;   /* 👈 adjust this (150–220px as you like) */
-  object-fit:cover;
-}
+ @media(min-width:769px){
+
   .card.web{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  height:260px; /* 👈 total card height */
+    display:flex;
+    flex-direction:column;
+    height:270px;   /* adjust if needed */
+  }
+
+  .card.web img{
+    height:150px;
+    object-fit:cover;
+  }
+
+  .visit-btn{
+    margin-top:auto;
+    width:80%;
+    padding:8px;
+    font-size:13px;
+  }
+
 }
+  
 /* ================= GRID ================= */
 .portfolio-grid{
   display:grid;
@@ -199,7 +229,23 @@ section{
   }
 
 }
+@media(max-width:768px){
 
+  .card.web{
+    height:auto;   /* important */
+  }
+
+  .card.web img{
+    height:140px;
+  }
+
+  .visit-btn{
+    width:90%;
+    font-size:12px;
+    padding:7px;
+  }
+
+}
 </style>
 
 </head>
