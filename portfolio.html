@@ -108,8 +108,9 @@ body{
   
 /* ================= GRID ================= */
 .portfolio-grid{
+  justify-content:centre;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:20px;
   padding:20px;
 }
@@ -123,6 +124,7 @@ section{
   overflow:hidden;
   cursor:pointer;
   transition:0.3s ease;
+  max-width:400px;
 }
 
 .card:hover{
@@ -133,7 +135,8 @@ section{
 .card img,
 .card iframe{
   width:100%;
-  height:200px;
+  aspect-ratio:16/9;
+  object-fit:cover;
 }
 
 .card h3{
