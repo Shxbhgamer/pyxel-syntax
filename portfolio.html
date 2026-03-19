@@ -1,11 +1,176 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
-    <link rel="stylesheet" href="public/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Pyxel Syntax</title>
+
+<link rel="stylesheet" href="public/css/style.css">
+
+<style>
+
+/* ================= NAV FIX ================= */
+@media(max-width:768px){
+  .nav-links{ display:none !important; }
+
+  .menu-btn{
+    display:block;
+    font-size:28px;
+    color:#00f7ff;
+    cursor:pointer;
+  }
+
+  .mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100%;
+    background:black;
+    padding:40px;
+    transition:0.4s;
+    z-index:999;
+  }
+
+  .mobile-menu.active{
+    right:0;
+  }
+
+  .mobile-menu ul{
+    list-style:none;
+    margin-top:40px;
+  }
+
+  .mobile-menu li{
+    margin:20px 0;
+  }
+
+  .mobile-menu a{
+    color:white;
+    font-size:20px;
+    text-decoration:none;
+  }
+
+  .close-btn{
+    font-size:25px;
+    color:#00f7ff;
+    cursor:pointer;
+  }
+}
+
+@media(min-width:769px){
+  .menu-btn{ display:none; }
+  .mobile-menu{ display:none; }
+}
+
+/* ================= TITLE ================= */
+.title{
+  text-align:center;
+  margin-top:40px;
+}
+
+/* ================= FILTER ================= */
+.filter-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:30px 0;
+  flex-wrap:wrap;
+}
+
+.filter-buttons button{
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  background:rgba(255,255,255,0.05);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.filter-buttons button:hover{
+  background:linear-gradient(135deg,#7b2ff7,#00c6ff);
+  box-shadow:0 0 15px #00f7ff;
+}
+
+/* ================= GRID ================= */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+/* ================= CARD ================= */
+.card{
+  background:rgba(255,255,255,0.05);
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.3s;
+  backdrop-filter:blur(10px);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 20px #00f7ff;
+}
+
+.card img,
+.card iframe{
+  width:100%;
+  height:200px;
+  border:none;
+}
+
+.card h3{
+  padding:10px;
+  text-align:center;
+}
+
+/* ================= POPUP ================= */
+#imagePopup,
+#videoPopup{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+#imagePopup img{
+  max-width:90%;
+  border-radius:10px;
+}
+
+#videoPopup iframe{
+  width:90%;
+  height:60%;
+}
+
+#closeImage,
+#closeVideo{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  color:white;
+  cursor:pointer;
+}
+
+</style>
+
 </head>
+
 <body>
+
+<!-- NAVBAR -->
 <nav class="navbar">
 
 <div class="logo">PYXEL SYNTAX</div>
@@ -21,9 +186,7 @@
 <div class="menu-btn" id="openMenu">☰</div>
 
 <div class="mobile-menu" id="mobileMenu">
-
 <div class="close-btn" id="closeMenu">✖</div>
-
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
@@ -31,128 +194,106 @@
 <li><a href="services.html">Services</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
-
 </div>
 
 </nav>
+
+<!-- PORTFOLIO -->
 <section id="portfolio">
 
 <h1 class="title">My Portfolio</h1>
 
-<!-- FILTER BUTTONS -->
-
 <div class="filter-buttons">
-
 <button onclick="filterSelection('all')">All</button>
-
 <button onclick="filterSelection('web')">Websites</button>
-
 <button onclick="filterSelection('edit')">Video Edits</button>
-
 </div>
-
 
 <div class="portfolio-grid">
 
-<!-- WEBSITE PROJECT -->
-
-<div class="card web">
-
-<img src="media/image/beauty-parlor.png" class="preview">
-
+<div class="card web" onclick="openImage('media/image/beauty-parlor.png')">
+<img src="media/image/beauty-parlor.png">
 <h3>Business Website</h3>
-
-<a href="https://shxbhgamer.github.io/Just-for-you/#home" target="_blank">Visit Website</a>
-
 </div>
 
-
-<!-- VIDEO EDIT -->
-
-<div class="card edit">
-
-<iframe 
-width="100%" 
-height="200"
-src="https://www.youtube.com/embed/5ov7LDxVhc4"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
+<div class="card edit" onclick="openVideo('https://www.youtube.com/embed/5ov7LDxVhc4')">
+<iframe src="https://www.youtube.com/embed/5ov7LDxVhc4"></iframe>
 <h3>Car Edit</h3>
-
 </div>
 
-
-<div class="card edit">
-
-<iframe 
-width="100%" 
-height="200"
-src="https://www.youtube.com/embed/9YeI_D0GPuI"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
+<div class="card edit" onclick="openVideo('https://www.youtube.com/embed/9YeI_D0GPuI')">
+<iframe src="https://www.youtube.com/embed/9YeI_D0GPuI"></iframe>
 <h3>Car Edit</h3>
-
 </div>
 
-<div class="card edit">
-
-<iframe 
-width="100%" 
-height="200"
-src="https://www.youtube.com/embed/1V1VuYrfn5A"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
+<div class="card edit" onclick="openVideo('https://www.youtube.com/embed/1V1VuYrfn5A')">
+<iframe src="https://www.youtube.com/embed/1V1VuYrfn5A"></iframe>
 <h3>Anime Edit</h3>
-
 </div>
 
-<div class="card edit">
-
-<iframe 
-width="100%" 
-height="200"
-src="https://www.youtube.com/embed/lv4-_w6rfEo"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
+<div class="card edit" onclick="openVideo('https://www.youtube.com/embed/lv4-_w6rfEo')">
+<iframe src="https://www.youtube.com/embed/lv4-_w6rfEo"></iframe>
 <h3>Movie Edit</h3>
+</div>
 
 </div>
 
 </section>
 
-
-
-<!-- POPUP IMAGE -->
-
+<!-- IMAGE POPUP -->
 <div id="imagePopup">
-
 <span id="closeImage">&times;</span>
-
 <img id="popupImage">
-
 </div>
 
-
-
-<!-- POPUP VIDEO -->
-
+<!-- VIDEO POPUP -->
 <div id="videoPopup">
-
 <span id="closeVideo">&times;</span>
-
-<video controls id="popupVideo"></video>
-
+<iframe id="popupVideo"></iframe>
 </div>
-<script src="public/js/script.js"></script>
+
+<!-- JS -->
+<script>
+
+/* NAV */
+openMenu.onclick = () => mobileMenu.classList.add("active")
+closeMenu.onclick = () => mobileMenu.classList.remove("active")
+
+/* FILTER */
+function filterSelection(category){
+  let cards = document.querySelectorAll(".card")
+
+  cards.forEach(card=>{
+    if(category === "all" || card.classList.contains(category)){
+      card.style.display = "block"
+    }else{
+      card.style.display = "none"
+    }
+  })
+}
+
+/* IMAGE POPUP */
+function openImage(src){
+  document.getElementById("popupImage").src = src
+  document.getElementById("imagePopup").style.display = "flex"
+}
+
+document.getElementById("closeImage").onclick = ()=>{
+  document.getElementById("imagePopup").style.display = "none"
+}
+
+/* VIDEO POPUP */
+function openVideo(src){
+  document.getElementById("popupVideo").src = src
+  document.getElementById("videoPopup").style.display = "flex"
+}
+
+document.getElementById("closeVideo").onclick = ()=>{
+  document.getElementById("videoPopup").style.display = "none"
+  document.getElementById("popupVideo").src = ""
+}
+
+</script>
 
 </body>
-
 </html>
