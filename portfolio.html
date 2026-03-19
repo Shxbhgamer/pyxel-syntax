@@ -19,38 +19,7 @@ body{
 }
 }
 
-/* ================= NAVBAR ================= */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(10px)
-}
 
-
-.logo{
-  font-weight:bold;
-  font-size:30px;
-  background:linear-gradient(90deg,#00f7ff,#a855f7);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:0 0 10px rgba(0,247,255,0.4);
-}
-
-.navbar{
-  padding:15px 40px;
-  backdrop-filter:blur(10px);
-}
-
-.nav-links{
-  gap:30px;
-}
-
-.nav-links a{
-  position:relative;
-}
 
 .nav-links a::after{
   content:"";
@@ -68,19 +37,7 @@ body{
 }
 
 /* MOBILE NAV */
-.menu-btn{
-  display:none;
-}
 
-.mobile-menu{
-  position:fixed;
-  top:0;
-  width:70%;
-  height:100%;
-  background:black;
-  padding:40px;
-  transition:0.4s;
-}
 
 
 /* ================= TITLE ================= */
@@ -210,7 +167,83 @@ section{
   font-size:30px;
   cursor:pointer;
 }
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.8);
+}
 
+/* LOGO (GRADIENT 🔥) */
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#7b2ff7,#00c6ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* DESKTOP LINKS */
+.nav-links{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+}
+
+/* HAMBURGER */
+.menu-btn{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  color:white;
+}
+
+/* MOBILE MENU (RIGHT SIDE ✅) */
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;   /* 👈 hidden right */
+  width:70%;
+  height:100%;
+  background:black;
+  padding:40px;
+  transition:0.4s;
+}
+
+.mobile-menu.active{
+  right:0;  /* 👈 slide from right */
+}
+
+.mobile-menu ul{
+  list-style:none;
+  padding:0;
+}
+
+.mobile-menu li{
+  margin:20px 0;
+}
+
+.mobile-menu a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* CLOSE BUTTON */
+.close{
+  font-size:25px;
+  cursor:pointer;
+  margin-bottom:20px;
+  display:block;
+}
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
 
