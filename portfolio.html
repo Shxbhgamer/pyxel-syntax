@@ -15,6 +15,8 @@ body{
   font-family:sans-serif;
   background:black;
   color:white;
+  min-height:105vh;
+}
 }
 
 /* ================= NAVBAR ================= */
@@ -26,9 +28,14 @@ body{
   background:rgba(0,0,0,0.7);
 }
 
+
 .logo{
   font-weight:bold;
-  color:#00f7ff;
+  font-size:20px;
+  background:linear-gradient(90deg,#00f7ff,#a855f7);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 10px rgba(0,247,255,0.4);
 }
 
 .nav-links{
@@ -89,7 +96,23 @@ body{
   background:#00f7ff;
   color:black;
 }
+.visit-btn{
+  display:block;
+  margin:10px auto 15px;
+  width:80%;
+  text-align:center;
+  padding:10px;
+  border-radius:20px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(135deg,#7b2ff7,#00c6ff);
+  transition:0.3s;
+}
 
+.visit-btn:hover{
+  box-shadow:0 0 15px #00f7ff;
+  transform:scale(1.05);
+}
 /* ================= GRID ================= */
 .portfolio-grid{
   display:grid;
@@ -97,7 +120,9 @@ body{
   gap:20px;
   padding:20px;
 }
-
+section{
+  padding-bottom:40px;
+}
 /* ================= CARD ================= */
 .card{
   background:#111;
@@ -211,9 +236,13 @@ body{
 
 <div class="portfolio-grid">
 
-<div class="card web" onclick="openImage('media/image/beauty-parlor.png')">
+<div class="card web">
 <img src="media/image/beauty-parlor.png">
 <h3>Business Website</h3>
+
+<a href="https://shxbhgamer.github.io/Just-for-you/#home" target="_blank" class="visit-btn">
+Visit Website
+</a>
 </div>
 
 <div class="card edit" onclick="openVideo('https://www.youtube.com/embed/5ov7LDxVhc4')">
