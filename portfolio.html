@@ -108,13 +108,16 @@ body{
   
 /* ================= GRID ================= */
 .portfolio-grid{
-  justify-content:center;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  display:flex;              /* 🔥 change grid → flex */
+  flex-wrap:wrap;
+  justify-content:center;   /* ✅ PERFECT CENTER */
   gap:20px;
   padding:20px;
 }
 section{
+  display:flex;
+  flex-direction:column;
+  align-item:center;
   padding-bottom:40px;
 }
 /* ================= CARD ================= */
@@ -124,8 +127,8 @@ section{
   overflow:hidden;
   cursor:pointer;
   transition:0.3s ease;
-  max-width:400px;
-  justify-content:center;
+  width:320px;
+  max-width:90%;
 }
 
 .card:hover{
