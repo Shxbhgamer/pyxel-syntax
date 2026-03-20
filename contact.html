@@ -47,8 +47,8 @@
   -webkit-mask-composite:xor;
   mask-composite:exclude;
   animation:neonBorder 4s linear infinite;
-
-  pointer-events: none; /* ✅ FIX CLICK ISSUE */
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes neonBorder{
@@ -58,9 +58,11 @@
 
 /* ================= FORM ================= */
 .contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:25px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column; /* vertical */
+  gap: 25px;
 }
 
 /* Floating input */
@@ -125,6 +127,9 @@ textarea{
   font-weight:600;
   cursor:pointer;
   transition:0.3s;
+  position: relative;
+  z-index: 3;
+}
 }
 
 .send-btn:hover{
