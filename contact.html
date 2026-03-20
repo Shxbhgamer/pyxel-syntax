@@ -5,11 +5,183 @@
 
 <title>Contact | Pyxel Syntax</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="public/css/style.css">
+
+<style>
+
+/* ================= PREMIUM CONTACT ================= */
+.contact-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 20px;
+}
+
+/* Glass Card */
+.contact-card{
+  width:100%;
+  max-width:800px;
+  padding:40px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(20px);
+  box-shadow:0 0 40px rgba(0,255,255,0.15);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Neon animated border */
+.contact-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  padding:2px;
+  background:linear-gradient(90deg,#00f7ff,#a855f7,#00f7ff);
+  background-size:200%;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  animation:neonBorder 4s linear infinite;
+}
+
+@keyframes neonBorder{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+/* ================= FORM ================= */
+.contact-form{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+}
+
+/* Floating input */
+.input-group{
+  position:relative;
+  flex:1;
+  min-width:250px;
+}
+
+.input-group input,
+.input-group textarea{
+  width:100%;
+  padding:16px;
+  border:none;
+  outline:none;
+  border-radius:10px;
+  background:rgba(255,255,255,0.07);
+  color:white;
+  font-size:14px;
+}
+
+/* Label */
+.input-group label{
+  position:absolute;
+  top:50%;
+  left:15px;
+  transform:translateY(-50%);
+  color:#aaa;
+  pointer-events:none;
+  transition:0.3s;
+}
+
+/* Floating effect */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label{
+  top:-8px;
+  left:10px;
+  font-size:12px;
+  color:#00f7ff;
+}
+
+/* Textarea full */
+.input-group.full{
+  flex:100%;
+}
+
+textarea{
+  min-height:140px;
+  resize:none;
+}
+
+/* ================= BUTTON ================= */
+.send-btn{
+  margin:auto;
+  padding:14px 40px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#7b2ff7,#00c6ff);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.send-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #00f7ff;
+}
+
+/* ================= MOBILE NAV ================= */
+@media(max-width:768px){
+
+  .nav-links{
+    display:none !important;
+  }
+
+  .menu-btn{
+    display:block !important;
+    font-size:28px;
+    color:#00f7ff;
+    cursor:pointer;
+  }
+
+  .mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100%;
+    background:black;
+    padding:40px;
+    transition:0.4s;
+  }
+
+  .mobile-menu.active{
+    right:0;
+  }
+
+  .contact-card{
+    padding:25px;
+  }
+
+}
+
+/* DESKTOP */
+@media(min-width:769px){
+  .menu-btn{
+    display:none;
+  }
+  .mobile-menu{
+    display:none;
+  }
+}
+
+</style>
 
 </head>
 
 <body>
+
+<!-- NAVBAR (UNCHANGED) -->
 <nav class="navbar">
 
 <div class="logo">PYXEL SYNTAX</div>
@@ -25,9 +197,7 @@
 <div class="menu-btn" id="openMenu">☰</div>
 
 <div class="mobile-menu" id="mobileMenu">
-
 <div class="close-btn" id="closeMenu">✖</div>
-
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
@@ -35,27 +205,54 @@
 <li><a href="services.html">Services</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
-
 </div>
 
 </nav>
-<section class="page">
 
-<h1>Contact Me</h1>
+<!-- CONTACT -->
+<section class="contact-wrapper">
+
+<div class="contact-card">
+
+<h1 style="text-align:center;">Contact Me</h1>
+
 <form class="contact-form" id="contactForm">
 
-<input type="text" id="name" placeholder="Your Name" required>
+<div class="input-group">
+<input type="text" id="name" required>
+<label>Your Name</label>
+</div>
 
-<input type="email" id="email" placeholder="Your Email" required>
+<div class="input-group">
+<input type="email" id="email" required>
+<label>Your Email</label>
+</div>
 
-<textarea id="message" placeholder="Your Message" required></textarea>
+<div class="input-group full">
+<textarea id="message" required></textarea>
+<label>Your Message</label>
+</div>
 
-<button type="submit">Send</button>
+<button type="submit" class="send-btn">🚀 Send Message</button>
 
 </form>
-</section>
-<script>
 
+</div>
+
+</section>
+
+<!-- NAV JS -->
+<script>
+const openMenu = document.getElementById("openMenu")
+const closeMenu = document.getElementById("closeMenu")
+const mobileMenu = document.getElementById("mobileMenu")
+
+openMenu.onclick = () => mobileMenu.classList.add("active")
+closeMenu.onclick = () => mobileMenu.classList.remove("active")
+</script>
+
+<!-- WHATSAPP SCRIPT -->
+<script>
 document.getElementById("contactForm").addEventListener("submit", function(e){
 
 e.preventDefault()
@@ -73,7 +270,7 @@ let url = `https://wa.me/${phone}?text=${text}`
 window.open(url, "_blank")
 
 })
-
 </script>
+
 </body>
 </html>
