@@ -318,6 +318,17 @@ section{
     display:none !important;
   }
 }
+  @media(max-width:768px){
+
+  .portfolio-grid{
+    grid-template-columns:repeat(auto-fit, 280px); /* 👈 change width for mobile */
+  }
+
+  .card{
+    max-width:280px;
+  }
+
+}
 </style>
 
 </head>
