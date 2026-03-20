@@ -47,6 +47,8 @@
   -webkit-mask-composite:xor;
   mask-composite:exclude;
   animation:neonBorder 4s linear infinite;
+
+  pointer-events: none; /* ✅ FIX CLICK ISSUE */
 }
 
 @keyframes neonBorder{
@@ -57,7 +59,7 @@
 /* ================= FORM ================= */
 .contact-form{
   display:flex;
-  flex-wrap:wrap;
+  flex-direction:column;
   gap:25px;
 }
 
@@ -263,8 +265,11 @@ let message = document.getElementById("message").value
 
 let phone = "919431331072"
 
-let text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`
-
+let text = encodeURIComponent(
+`Name: ${name}
+Email: ${email}
+Message: ${message}`
+)
 let url = `https://wa.me/${phone}?text=${text}`
 
 window.open(url, "_blank")
